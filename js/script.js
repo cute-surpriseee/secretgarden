@@ -58,7 +58,6 @@ function checkPassword(e) {
             if (garden) {
                 garden.style.display = 'block';
             }
-            startTypewriter();
 
         }, 500); // (or whatever your setTimeout time is)
                 // 3. Show & smoothly fade in garden section
@@ -297,4 +296,25 @@ function startTypewriter() {
         const heartSurprise = document.getElementById("heartSurprise");
         if (heartSurprise) heartSurprise.classList.remove("hidden");
     }
+}
+let isEnvelopeOpened = false;
+
+function openEnvelope() {
+    // If already opened, don't restart typing
+    if (isEnvelopeOpened) return;
+    isEnvelopeOpened = true;
+
+    // Change icon from sealed envelope to open letter
+    const icon = document.getElementById('envelopeIcon');
+    const hint = document.getElementById('envelopeHint');
+    const letter = document.getElementById('letterPaper');
+
+    if (icon) icon.innerText = '📬';
+    if (hint) hint.innerText = '💌 Message for you:';
+
+    // Reveal the letter paper
+    if (letter) letter.classList.remove('hidden');
+
+    // Start typewriter effect inside the letter!
+    startTypewriter();
 }
