@@ -41,8 +41,6 @@ function checkPassword(e) {
     const overlay = document.getElementById('passwordOverlay');
     const garden = document.getElementById('gardenSection');
 
-    // Accepts any text or you can change this to your secret keyword if you want!
-    // For now, if they type anything or even if it's open, it will let them through smoothly:
     if (passwordInput !== "" || passwordInput === "") { 
         if (overlay) {
             // 1. Add fade-out class to password screen
@@ -68,6 +66,7 @@ function checkPassword(e) {
         }
     }
 }
+
 // ==========================================
 // MUSIC TOGGLE BUTTON LISTENER
 // ==========================================
@@ -242,27 +241,6 @@ window.onclick = function(event) {
     }
 };
 
-// SPAWN FLOATING HEART / TULIP ON CLICK
-document.addEventListener('click', function(e) {
-    const emojis = ['🌷', '💖', '🌸', '✨', '💕', '🌷'];
-    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-
-    const emojiElement = document.createElement('span');
-    emojiElement.classList.add('floating-emoji');
-    emojiElement.innerText = randomEmoji;
-
-    // Position emoji where the tap/click happened
-    emojiElement.style.left = e.clientX + 'px';
-    emojiElement.style.top = e.clientY + 'px';
-
-    document.body.appendChild(emojiElement);
-
-    // Remove element after animation finishes
-    setTimeout(() => {
-        emojiElement.remove();
-    }, 1200);
-});
-
 // ==========================================
 // TYPEWRITER EFFECT FOR FINAL SPECIAL MESSAGE
 // ==========================================
@@ -282,9 +260,8 @@ function startTypewriter() {
             textElement.innerHTML += char;
         }
         msgIndex++;
-        setTimeout(startTypewriter, 35); // Speed of typing (lower = faster)
+        setTimeout(startTypewriter, 35);
     } else {
-        // Show glowing heart when done
         const heartSurprise = document.getElementById("heartSurprise");
         if (heartSurprise) heartSurprise.classList.remove("hidden");
     }
@@ -317,6 +294,7 @@ function closeEnvelope() {
     if (backdrop) backdrop.classList.add('hidden');
     if (letter) letter.classList.add('hidden');
 }
+
 // ==========================================
 // MASSIVE BLOOM BURST EFFECT ON BUTTON CLICK
 // ==========================================
@@ -328,17 +306,14 @@ function triggerBloomBurst(e) {
 
     const burstEmojis = ['🌸', '🌷', '💖', '✨', '💕', '🌷', '🌸', '✨', '💖'];
     
-    // Increased count to 30 for a massive explosion of emojis!
     for (let i = 0; i < 30; i++) {
         const emoji = document.createElement('span');
         emoji.classList.add('floating-emoji');
         emoji.innerText = burstEmojis[Math.floor(Math.random() * burstEmojis.length)];
         
-        // Start right at the button center
         emoji.style.left = x + 'px';
         emoji.style.top = y + 'px';
         
-        // Random angle and much wider distance scatter (up to 180px away)
         const angle = Math.random() * Math.PI * 2;
         const distance = 40 + Math.random() * 140;
         const targetX = Math.cos(angle) * distance;
@@ -349,7 +324,6 @@ function triggerBloomBurst(e) {
         
         document.body.appendChild(emoji);
 
-        // Clean up after animation
         setTimeout(() => {
             emoji.remove();
         }, 1200);
