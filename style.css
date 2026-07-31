@@ -687,3 +687,49 @@ body {
         transform: translate(-50%, -50%) scale(1) translateY(-60px);
     }
 }
+/* ENVELOPE CARD STYLING */
+.envelope-card {
+    cursor: pointer;
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%) !important;
+    border: 2px dashed #ffb7c5 !important;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.envelope-card:active {
+    transform: scale(0.98);
+}
+
+.envelope-icon {
+    font-size: 50px;
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.click-hint {
+    font-size: 13px;
+    color: #ff4d6d;
+    font-weight: bold;
+    animation: bounce 1.5s infinite;
+}
+
+/* LETTER INSIDE THE ENVELOPE */
+.letter-paper {
+    margin-top: 15px;
+    padding: 18px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #ffd1dc;
+    box-shadow: inset 0 0 10px rgba(255, 183, 197, 0.2);
+    animation: fadeInLetter 0.6s ease forwards;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+@keyframes fadeInLetter {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
