@@ -299,22 +299,30 @@ function startTypewriter() {
 }
 let isEnvelopeOpened = false;
 
-function openEnvelope() {
-    // If already opened, don't restart typing
-    if (isEnvelopeOpened) return;
-    isEnvelopeOpened = true;
+inside the letter!
+    startTypewriter();
+}
+let isEnvelopeOpened = false;
 
-    // Change icon from sealed envelope to open letter
-    const icon = document.getElementById('envelopeIcon');
-    const hint = document.getElementById('envelopeHint');
+function openEnvelope(e) {
+    if (e) e.stopPropagation();
+
+    const backdrop = document.getElementById('letterBackdrop');
     const letter = document.getElementById('letterPaper');
 
-    if (icon) icon.innerText = '📬';
-    if (hint) hint.innerText = '💌 Message for you:';
-
-    // Reveal the letter paper
+    if (backdrop) backdrop.classList.remove('hidden');
     if (letter) letter.classList.remove('hidden');
 
-    // Start typewriter effect inside the letter!
-    startTypewriter();
+    if (!isEnvelopeOpened) {
+        isEnvelopeOpened = true;
+        startTypewriter();
+    }
+}
+
+function closeEnvelope() {
+    const backdrop = document.getElementById('letterBackdrop');
+    const letter = document.getElementById('letterPaper');
+
+    if (backdrop) backdrop.classList.add('hidden');
+    if (letter) letter.classList.add('hidden');
 }
