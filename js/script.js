@@ -320,7 +320,7 @@ function closeEnvelope() {
     if (letter) letter.classList.add('hidden');
 }
 // ==========================================
-// SPECIAL BLOOM BURST EFFECT ON BUTTON CLICK
+// MASSIVE BLOOM BURST EFFECT ON BUTTON CLICK
 // ==========================================
 function triggerBloomBurst(e) {
     const button = e.currentTarget;
@@ -328,21 +328,21 @@ function triggerBloomBurst(e) {
     const x = rect.left + rect.width / 2;
     const y = rect.top + rect.height / 2;
 
-    const burstEmojis = ['🌸', '🌷', '💖', '✨', '💕', '✨'];
+    const burstEmojis = ['🌸', '🌷', '💖', '✨', '💕', '🌷', '🌸', '✨', '💖'];
     
-    // Spawn 8-10 items in a quick burst
-    for (let i = 0; i < 10; i++) {
+    // Increased count to 30 for a massive explosion of emojis!
+    for (let i = 0; i < 30; i++) {
         const emoji = document.createElement('span');
         emoji.classList.add('floating-emoji');
         emoji.innerText = burstEmojis[Math.floor(Math.random() * burstEmojis.length)];
         
-        // Start them right at the center of the button
+        // Start right at the button center
         emoji.style.left = x + 'px';
         emoji.style.top = y + 'px';
         
-        // Give them a randomized scattering motion
+        // Random angle and much wider distance scatter (up to 180px away)
         const angle = Math.random() * Math.PI * 2;
-        const distance = 40 + Math.random() * 60;
+        const distance = 40 + Math.random() * 140;
         const targetX = Math.cos(angle) * distance;
         const targetY = Math.sin(angle) * distance;
         
