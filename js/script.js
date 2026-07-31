@@ -30,18 +30,17 @@ function openPasswordModal() {
         overlay.style.display = 'flex';
     }
 }
+
 // ==========================================
-// 2. UNLOCK PASSWORD, SMOOTH FADE & REVEAL GARDEN
+// 2. UNLOCK PASSWORD & INSTANTLY REVEAL GARDEN
 // ==========================================
 function checkPassword(e) {
     if (e) e.preventDefault();
 
-    const passwordInput = document.getElementById('secretPass').value.trim();
     const overlay = document.getElementById('passwordOverlay');
     const garden = document.getElementById('gardenSection');
 
     if (overlay) {
-        // Instantly hide overlay with no delay
         overlay.style.display = 'none';
         
         if (garden) {
@@ -52,7 +51,6 @@ function checkPassword(e) {
         }
     }
 }
-
 
 // ==========================================
 // MUSIC TOGGLE BUTTON LISTENER
