@@ -129,17 +129,24 @@
                 <h3>Future Adventures ✈️</h3>
                 <p>First IRL meet & cafe dates</p>
                 <span class="card-cat-badge">🐾</span>
-                <!-- FINAL SPECIAL MESSAGE CARD -->
-<div class="card final-card">
-    <span class="card-icon">💌</span>
-    <h3 style="color: #d63384; font-size: 22px; margin-bottom: 12px;">A Special Note For You 💖</h3>
-    <p id="typewriterText" style="line-height: 1.6; text-align: left; font-size: 15px;"></p>
-    
-    <div id="heartSurprise" class="hidden" style="margin-top: 20px; text-align: center;">
-        <p class="final-heart" style="font-size: 40px; margin: 5px 0;">💖🌷✨</p>
-        <p class="final-note" style="font-weight: bold; color: #ff4d6d;">You're truly the best!</p>
-    </div>
-</div>
+                <!-- A SPECIAL NOTE (ENVELOPE) SECTION -->
+        <div class="card envelope-card" id="envelopeCard" onclick="openEnvelope()">
+            <div class="envelope-header">
+                <span class="envelope-icon" id="envelopeIcon">✉️</span>
+                <h3 style="color: #d63384; font-size: 22px; margin: 8px 0;">A Special Note 💌</h3>
+                <p class="click-hint" id="envelopeHint">✨ Tap envelope to open letter ✨</p>
+            </div>
+            
+            <!-- LETTER PAPER (HIDDEN UNTIL CLICKED) -->
+            <div id="letterPaper" class="letter-paper hidden">
+                <p id="typewriterText" style="line-height: 1.6; text-align: left; font-size: 15px; color: #333;"></p>
+                
+                <div id="heartSurprise" class="hidden" style="margin-top: 20px; text-align: center;">
+                    <p class="final-heart" style="font-size: 40px; margin: 5px 0;">💖🌷✨</p>
+                    <p class="final-note" style="font-weight: bold; color: #ff4d6d;">You're truly the best!</p>
+                </div>
+            </div>
+        </div>
             </div>
         </div>
     </section>
