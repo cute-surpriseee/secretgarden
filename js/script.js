@@ -319,3 +319,41 @@ function closeEnvelope() {
     if (backdrop) backdrop.classList.add('hidden');
     if (letter) letter.classList.add('hidden');
 }
+// ==========================================
+// SPECIAL BLOOM BURST EFFECT ON BUTTON CLICK
+// ==========================================
+function triggerBloomBurst(e) {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+
+    const burstEmojis = ['🌸', '🌷', '💖', '✨', '💕', '✨'];
+    
+    // Spawn 8-10 items in a quick burst
+    for (let i = 0; i < 10; i++) {
+        const emoji = document.createElement('span');
+        emoji.classList.add('floating-emoji');
+        emoji.innerText = burstEmojis[Math.floor(Math.random() * burstEmojis.length)];
+        
+        // Start them right at the center of the button
+        emoji.style.left = x + 'px';
+        emoji.style.top = y + 'px';
+        
+        // Give them a randomized scattering motion
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 40 + Math.random() * 60;
+        const targetX = Math.cos(angle) * distance;
+        const targetY = Math.sin(angle) * distance;
+        
+        emoji.style.setProperty('--target-x', targetX + 'px');
+        emoji.style.setProperty('--target-y', targetY + 'px');
+        
+        document.body.appendChild(emoji);
+
+        // Clean up after animation
+        setTimeout(() => {
+            emoji.remove();
+        }, 1200);
+    }
+}
