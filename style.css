@@ -652,3 +652,15 @@ body {
 #gardenSection {
     transition: opacity 1s ease-in-out;
 }
+/* FORCE HIDE SECTIONS INITIALLY */
+.hidden {
+    display: none !important;
+}
+
+#passwordOverlay, #gardenSection {
+    display: none;
+}
+
+#welcomeScreen {
+    display: block;
+}
