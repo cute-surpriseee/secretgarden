@@ -57,7 +57,7 @@ function checkPassword(e) {
 // ==========================================
 // MUSIC TOGGLE BUTTON LISTENER
 // ==========================================
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded' () => {
     const musicBtn = document.getElementById('musicToggle');
     const bgMusic = document.getElementById('bgMusic');
 
