@@ -794,3 +794,41 @@ body {
     backdrop-filter: blur(4px);
     z-index: 9998;
 }
+/* Make 5th card take up full width at the bottom */
+.garden-card.full-width {
+    grid-column: span 2 !important;
+    width: 100% !important;
+}
+
+/* Modal Popup Styling */
+.letter-paper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    color: #333;
+}
+
+.letter-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
+}
+
+.hidden {
+    display: none !important;
+}
