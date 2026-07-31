@@ -30,7 +30,6 @@ function openPasswordModal() {
         overlay.style.display = 'flex';
     }
 }
-
 // ==========================================
 // 2. UNLOCK PASSWORD, SMOOTH FADE & REVEAL GARDEN
 // ==========================================
@@ -41,25 +40,19 @@ function checkPassword(e) {
     const overlay = document.getElementById('passwordOverlay');
     const garden = document.getElementById('gardenSection');
 
-    if (passwordInput !== "" || passwordInput === "") { 
-        if (overlay) {
-            // Instantly hide overlay with no delay
-            overlay.style.display = 'none';
-                if (garden) {
-                    garden.style.display = 'block';
-                    garden.style.opacity = '0';
-                    garden.classList.remove('hidden');
-                    
-                    // Force browser redraw then fade in
-                    setTimeout(() => {
-                        garden.style.opacity = '1';
-                        garden.scrollIntoView({ behavior: 'smooth' });
-                    }, 50);
-                }
-            }, 800); // 800ms matches the CSS transition time
+    if (overlay) {
+        // Instantly hide overlay with no delay
+        overlay.style.display = 'none';
+        
+        if (garden) {
+            garden.style.display = 'block';
+            garden.style.opacity = '1';
+            garden.classList.remove('hidden');
+            garden.scrollIntoView({ behavior: 'auto' });
         }
     }
 }
+
 
 // ==========================================
 // MUSIC TOGGLE BUTTON LISTENER
