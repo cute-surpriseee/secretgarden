@@ -130,6 +130,22 @@
                 <p>First IRL meet & cafe dates</p>
                 <span class="card-cat-badge">🐾</span>
                 <!-- A SPECIAL NOTE (ENVELOPE) SECTION -->
+                <!-- Card 5: Full-Width Special Note -->
+        <div class="garden-card full-width" onclick="openEnvelope(event)">
+            <div class="card-icon"><i class="fas fa-envelope"></i></div>
+            <h3 style="color: #ffffff; font-size: 20px; margin: 8px 0; font-weight: bold;">A Special Note 💌</h3>
+            <p class="click-hint" id="envelopeHint" style="color: #ffe4e1; font-size: 13px;">✨ Tap envelope to open letter ✨</p>
+            
+            <!-- LETTER PAPER (HIDDEN UNTIL CLICKED) -->
+            <div id="letterPaper" class="letter-paper hidden">
+                <p id="typewriterText" style="line-height: 1.6; text-align: left; font-size: 15px; color: #333; margin-top: 15px;"></p>
+                
+                <div id="heartSurprise" class="hidden" style="margin-top: 15px; text-align: center;">
+                    <p class="final-heart" style="font-size: 35px; margin: 5px 0;">💖🌷✨</p>
+                    <p class="final-note" style="font-weight: bold; color: #ff4d6d;">You're truly the best!</p>
+                </div>
+            </div>
+        </div>
         <div class="card envelope-card" id="envelopeCard" onclick="openEnvelope()">
             <div class="envelope-header">
                 <span class="envelope-icon" id="envelopeIcon">✉️</span>
