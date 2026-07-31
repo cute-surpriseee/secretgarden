@@ -37,18 +37,26 @@ function openPasswordModal() {
 function checkPassword(e) {
     if (e) e.preventDefault();
 
+    const passwordInput = document.getElementById('secretPass').value.trim();
     const overlay = document.getElementById('passwordOverlay');
     const garden = document.getElementById('gardenSection');
 
-    if (overlay) {
-        overlay.style.display = 'none';
-        
-        if (garden) {
-            garden.style.display = 'block';
-            garden.style.opacity = '1';
-            garden.classList.remove('hidden');
-            garden.scrollIntoView({ behavior: 'auto' });
+    // 👇 CHANGE "your_new_password" TO WHATEVER PASSWORD YOU WANT!
+    const secretKey = "ishu1012"; 
+
+    if (passwordInput === secretKey) {
+        if (overlay) {
+            overlay.style.display = 'none';
+            
+            if (garden) {
+                garden.style.display = 'block';
+                garden.style.opacity = '1';
+                garden.classList.remove('hidden');
+                garden.scrollIntoView({ behavior: 'auto' });
+            }
         }
+    } else {
+        alert("Wrong password, ask your bestie for the right one! 🐾");
     }
 }
 
@@ -96,7 +104,7 @@ const photoList = [
     },
     {
         src: "./assets/images/mganga.png",
-        caption: "🌸 Ik animated haii but our very first pic togehter! 💕"
+        caption: "🌸 Ik animated haii but our very first pic togehter! 💗"
     }
 ];
 
@@ -177,7 +185,7 @@ const cardData = {
         title: "Why You're Special ✨",
         content: `
             <ul>
-                <li>💖 You're an incredible listener</li>
+                <li>💗 You're an incredible listener</li>
                 <li>🌸 You make bad days so good just by texting me</li>
                 <li>🎧 The vibe we matchh</li>
                 <li>📱 You're my favorite notification</li>
@@ -229,7 +237,7 @@ window.onclick = function(event) {
 // ==========================================
 // TYPEWRITER EFFECT FOR FINAL SPECIAL MESSAGE
 // ==========================================
-const customMessage = `Helloo Ishuuuu !! Happyyy friendshippp dayyyy !!! 🎉\n\nAnd this could've been done normallyy alsoo but meko laga thoda kuch alag se krta hu for my girll, isiliye made this. Ik utna koi perfect sa webpage nhi bana hai, but I tried to make one for you. 🌸\n\nI'm soo haappyyy to have a bestiiieee likee youu, my bestessttt friieenddd! I reallyy wannaa thank youu for being with me jub bhi needed, for understanding me itnee acheee se. Mai jub bhi achaa feel nhi krta mera mood liftup krti hai, busyy schedule me se bhii youu managee to come to me, reply kr detii hai, mekoo supporrtt krtii har chizz me and smjhaatii bhii haii... 🥹💖`;
+const customMessage = `Helloo! Sbse pehele happyyy friendshippp dayyyy !!! 🎉\n\nAnd this could've been done normallyy alsoo but meko laga thoda kuch alag se krta hu for my girll, isiliye made this. Ik utna koi perfect sa webpage nhi bana hai, but I tried to make one for you. 🌸\n\nI'm soo haappyyy to have a bestiiieee likee youu, my bestessttt friieenddd! I reallyy wannaa thank youu for being with me jub bhi needed, for understanding me itnee acheee se. Mai jub bhi achaa feel nhi krta mera mood liftup krti hai, busyy schedule me se bhii youu managee to come to me, reply kr detii hai, mekoo supporrtt krtii har chizz me and smjhaatii bhii haii... 🥹💗`;
 
 let msgIndex = 0;
 
@@ -289,7 +297,7 @@ function triggerBloomBurst(e) {
     const x = rect.left + rect.width / 2;
     const y = rect.top + rect.height / 2;
 
-    const burstEmojis = ['🌸', '🌷', '💖', '✨', '💕', '🌷', '🌸', '✨', '💖'];
+    const burstEmojis = ['🌸', '🌷', '💗', '✨', '💕', '🌷', '🌸', '✨', '💗'];
     
     for (let i = 0; i < 30; i++) {
         const emoji = document.createElement('span');
