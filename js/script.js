@@ -299,7 +299,7 @@ function startTypewriter() {
 }
 let isEnvelopeOpened = false;
 
-inside the letter!
+//inside the letter!
     startTypewriter();
 }
 let isEnvelopeOpened = false;
