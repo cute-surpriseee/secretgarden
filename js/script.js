@@ -50,20 +50,12 @@ function checkPassword(e) {
             setTimeout(() => {
                 // 2. Hide password screen completely after fade finishes
                 overlay.style.display = 'none';
-                setTimeout(() => {
-            // 2. Hide password screen completely after fade finishes
-            overlay.style.display = 'none';
 
-            // 3. Show garden and start typewriter! 👈 ADD THESE LINES HERE
-            if (garden) {
-                garden.style.display = 'block';
-            }
-
-        }, 500); // (or whatever your setTimeout time is)
                 // 3. Show & smoothly fade in garden section
                 if (garden) {
                     garden.style.display = 'block';
                     garden.style.opacity = '0';
+                    garden.classList.remove('hidden');
                     
                     // Force browser redraw then fade in
                     setTimeout(() => {
@@ -251,6 +243,7 @@ window.onclick = function(event) {
         closeModal();
     }
 };
+
 // SPAWN FLOATING HEART / TULIP ON CLICK
 document.addEventListener('click', function(e) {
     const emojis = ['🌷', '💖', '🌸', '✨', '💕', '🌷'];
@@ -271,6 +264,7 @@ document.addEventListener('click', function(e) {
         emojiElement.remove();
     }, 1200);
 });
+
 // ==========================================
 // TYPEWRITER EFFECT FOR FINAL SPECIAL MESSAGE
 // ==========================================
@@ -297,10 +291,10 @@ function startTypewriter() {
         if (heartSurprise) heartSurprise.classList.remove("hidden");
     }
 }
-let isEnvelopeOpened = false;
 
-    startTypewriter();
-}
+// ==========================================
+// SPECIAL NOTE ENVELOPE OPEN / CLOSE
+// ==========================================
 let isEnvelopeOpened = false;
 
 function openEnvelope(e) {
