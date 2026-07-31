@@ -325,10 +325,32 @@ body {
     text-shadow: 0 0 15px rgba(244, 114, 182, 0.5);
 }
 
+/* GRID LAYOUT FOR THE GARDEN CARDS */
 .garden-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns side-by-side */
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* MAKE THE SPECIAL NOTE CARD SPAN BOTH COLUMNS AT THE BOTTOM */
+.envelope-card.full-width {
+    grid-column: span 2; /* Spans across both left and right columns */
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.4), rgba(255, 105, 180, 0.5)) !important;
+    border: 2px solid rgba(255, 255, 255, 0.6) !important;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.envelope-card.full-width:active {
+    transform: scale(0.97);
+}
 }
 
 .garden-card {
