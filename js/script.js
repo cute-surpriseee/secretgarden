@@ -41,8 +41,9 @@ function checkPassword(e) {
     const overlay = document.getElementById('passwordOverlay');
     const garden = document.getElementById('gardenSection');
 
-    // Replace "secret123" with your actual secret password!
-    if (passwordInput !== "") { 
+    // Accepts any text or you can change this to your secret keyword if you want!
+    // For now, if they type anything or even if it's open, it will let them through smoothly:
+    if (passwordInput !== "" || passwordInput === "") { 
         if (overlay) {
             // 1. Add fade-out class to password screen
             overlay.classList.add('fade-out');
@@ -65,11 +66,8 @@ function checkPassword(e) {
                 }
             }, 800); // 800ms matches the CSS transition time
         }
-    } else {
-        alert("Please enter the secret password! 🌷");
     }
 }
-
 // ==========================================
 // MUSIC TOGGLE BUTTON LISTENER
 // ==========================================
