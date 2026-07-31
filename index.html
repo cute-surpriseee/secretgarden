@@ -18,15 +18,16 @@
 </head>
 <body>
 
-   <div class="music-btn-container">
-    <button id="musicToggle" class="music-toggle-btn" title="Toggle Music">
-        <i class="fas fa-music"></i>
-    </button>
-   <audio id="bgMusic" loop preload="auto">
-    <source src="assets/audio/vaarooncomp.mp3" type="audio/mpeg">
-</audio>
-</div>
-        <!-- <audio id="bgMusic" loop><source src="assets/audio/vaarooncomp.mp3" type="audio/mpeg"></audio> -->
+    <!-- ==========================================
+         1. MUSIC PLAYER CONTROLS
+         ========================================== -->
+    <div class="music-btn-container">
+        <button id="musicToggle" class="music-toggle-btn" title="Toggle Music">
+            <i class="fas fa-music"></i>
+        </button>
+        <audio id="bgMusic" loop preload="auto">
+            <source src="assets/audio/vaarooncomp.mp3" type="audio/mpeg">
+        </audio>
     </div>
 
     <!-- ==========================================
@@ -51,16 +52,18 @@
             </div>
         </div>
     </section>
-      <!-- ========================================== -->
-      <!-- WELCOME / COVER SCREEN -->
-      <!-- ========================================== -->
-     <div id="welcomeOverlay" class="welcome-overlay">
-      <div class="welcome-card">
-        <h2>Welcome to Our Secret Garden 🌸</h2>
-        <p>Turn your sound on for the best experience 🎧</p>
-        <button id="startBtn" onclick="startExperience()">Click to Enter ✨</button>
+
+    <!-- ==========================================
+         WELCOME / COVER SCREEN
+         ========================================== -->
+    <div id="welcomeOverlay" class="welcome-overlay">
+        <div class="welcome-card">
+            <h2>Welcome to Our Secret Garden 🌸</h2>
+            <p>Turn your sound on for the best experience 🎧</p>
+            <button id="startBtn" onclick="startExperience()">Click to Enter ✨</button>
+        </div>
     </div>
-</div>
+
     <!-- ==========================================
          3. SECRET PASSWORD OVERLAY (Hidden by default)
          ========================================== -->
@@ -129,41 +132,21 @@
                 <h3>Future Adventures ✈️</h3>
                 <p>First IRL meet & cafe dates</p>
                 <span class="card-cat-badge">🐾</span>
-                <!-- A SPECIAL NOTE (ENVELOPE) SECTION -->
-               <!-- Card 5: Full-Width Special Note -->
-        <div class="garden-card full-width" onclick="openEnvelope(event)">
-            <div class="card-icon"><i class="fas fa-envelope"></i></div>
-            <h3 style="color: #ffffff; font-size: 20px; margin: 8px 0; font-weight: bold;">A Special Note 💌</h3>
-            <p class="click-hint" id="envelopeHint" style="color: #ffe4e1; font-size: 13px;">✨ Tap envelope to open letter ✨</p>
-        </div>
+            </div>
 
-        <!-- LETTER POPUP MODAL (OUTSIDE THE CARD) -->
-        <div id="letterBackdrop" class="letter-backdrop hidden" onclick="closeEnvelope()"></div>
-        <div id="letterPaper" class="letter-paper hidden">
-            <button onclick="closeEnvelope()" style="float: right; background: none; border: none; font-size: 20px; cursor: pointer;">✕</button>
-            <h3 style="color: #d63384; font-size: 20px; margin-bottom: 10px;">A Special Note For You 💖</h3>
-            
-            <p id="typewriterText" style="line-height: 1.6; text-align: left; font-size: 15px; color: #333; margin-top: 15px;"></p>
-            
-            <div id="heartSurprise" class="hidden" style="margin-top: 15px; text-align: center;">
-                <p class="final-heart" style="font-size: 35px; margin: 5px 0;">💖🌷✨</p>
-                <p class="final-note" style="font-weight: bold; color: #ff4d6d;">You're truly the best!</p>
+            <!-- Card 5: Full-Width Special Note -->
+            <div class="garden-card full-width" onclick="openEnvelope(event)">
+                <div class="card-icon"><i class="fas fa-envelope"></i></div>
+                <h3 style="color: #ffffff; font-size: 20px; margin: 8px 0; font-weight: bold;">A Special Note 💌</h3>
+                <p class="click-hint" id="envelopeHint" style="color: #ffe4e1; font-size: 13px;">✨ Tap envelope to open letter ✨</p>
             </div>
-      <div id="heartSurprise" class="hidden" style="margin-top: 15px; text-align: center;">
-                <p class="final-heart" style="font-size: 35px; margin: 5px 0;">💖🌷✨</p>
-                <p class="final-note" style="font-weight: bold; color: #ff4d6d;">You're truly the best!</p>
-            </div>
-        </div> <!-- Closes letterPaper -->
-
-    </div> <!-- Closes garden-grid -->
-</section> <!-- Closes gardenSection -->
-            </div>
-        </div>
-    </section>
+        </div> <!-- Closes garden-grid -->
+    </section> <!-- Closes gardenSection -->
 
     <!-- ==========================================
-         5. INTERACTIVE POPUP / DETAIL MODAL
+         5. INTERACTIVE POPUP / DETAIL MODALS
          ========================================== -->
+    <!-- Card Detail Modal -->
     <div id="detailModal" class="modal-overlay">
         <div class="modal-card">
             <button class="modal-back-btn" onclick="closeModal()">&larr; back</button>
@@ -171,7 +154,21 @@
         </div>
     </div>
 
+    <!-- Special Note Envelope Popup (Placed at Root Level for Fullscreen Coverage) -->
+    <div id="letterBackdrop" class="letter-backdrop hidden" onclick="closeEnvelope()"></div>
+    <div id="letterPaper" class="letter-paper hidden">
+        <button onclick="closeEnvelope()" style="float: right; background: none; border: none; font-size: 20px; cursor: pointer; color: #666;">✕</button>
+        <h3 style="color: #d63384; font-size: 20px; margin-bottom: 10px; text-align: center;">A Special Note For You 💖</h3>
+        
+        <p id="typewriterText" style="line-height: 1.6; text-align: left; font-size: 15px; color: #333; margin-top: 15px;"></p>
+        
+        <div id="heartSurprise" class="hidden" style="margin-top: 15px; text-align: center;">
+            <p class="final-heart" style="font-size: 35px; margin: 5px 0;">💖🌷✨</p>
+            <p class="final-note" style="font-weight: bold; color: #ff4d6d;">You're truly the best!</p>
+        </div>
+    </div>
+
     <!-- Main JavaScript File -->
-    <script src="js/script.js"></script>
+    <script src="script.js?v=2"></script>
 </body>
 </html>
