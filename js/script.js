@@ -50,7 +50,17 @@ function checkPassword(e) {
             setTimeout(() => {
                 // 2. Hide password screen completely after fade finishes
                 overlay.style.display = 'none';
-                
+                setTimeout(() => {
+            // 2. Hide password screen completely after fade finishes
+            overlay.style.display = 'none';
+
+            // 3. Show garden and start typewriter! 👈 ADD THESE LINES HERE
+            if (garden) {
+                garden.style.display = 'block';
+            }
+            startTypewriter();
+
+        }, 500); // (or whatever your setTimeout time is)
                 // 3. Show & smoothly fade in garden section
                 if (garden) {
                     garden.style.display = 'block';
@@ -262,3 +272,29 @@ document.addEventListener('click', function(e) {
         emojiElement.remove();
     }, 1200);
 });
+// ==========================================
+// TYPEWRITER EFFECT FOR FINAL SPECIAL MESSAGE
+// ==========================================
+const customMessage = `Helloo! Sbse pehele happyyy friendshippp dayyyy !!! 🎉\n\nAnd this could've been done normallyy alsoo but meko laga thoda kuch alag se krta hu for my girll, isiliye made this. Ik utna koi perfect sa webpage nhi bana hai, but I tried to make one for you. 🌸\n\nI'm soo haappyyy to have a bestiiieee likee youu, my bestessttt friieenddd! I reallyy wannaa thank youu for being with me jub bhi needed, for understanding me itnee acheee se. Mai jub bhi achaa feel nhi krta mera mood liftup krti hai, busyy schedule me se bhii youu managee to come to me, reply kr detii hai, mekoo supporrtt krtii har chizz me and smjhaatii bhii haii... 🥹💖`;
+
+let msgIndex = 0;
+
+function startTypewriter() {
+    const textElement = document.getElementById("typewriterText");
+    if (!textElement) return;
+
+    if (msgIndex < customMessage.length) {
+        let char = customMessage.charAt(msgIndex);
+        if (char === '\n') {
+            textElement.innerHTML += "<br>";
+        } else {
+            textElement.innerHTML += char;
+        }
+        msgIndex++;
+        setTimeout(startTypewriter, 35); // Speed of typing (lower = faster)
+    } else {
+        // Show glowing heart when done
+        const heartSurprise = document.getElementById("heartSurprise");
+        if (heartSurprise) heartSurprise.classList.remove("hidden");
+    }
+}
