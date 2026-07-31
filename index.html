@@ -31,30 +31,7 @@
     </div>
 
     <!-- ==========================================
-         2. HERO HOME INTERFACE (Loads First)
-         ========================================== -->
-    <section id="heroHome" class="tulip-hero">
-        <!-- Realistic Glowing Moon -->
-        <div class="realistic-moon"></div>
-        
-        <div class="hero-content">
-            <span class="sub-tag">🌷 Our Little Garden 🐾</span>
-            <h1 class="hero-title">For My Bestie 💖</h1>
-            <p class="hero-subtitle">A cozy little space full of memories, laughter, and endless friendship.</p>
-            
-            <button class="open-btn" onclick="triggerBloomBurst(event); startExperience();">Press to bloom 🌸</button>
-        </div>
-
-        <div class="tulip-field-footer">
-            <div class="quote-pill">
-                <span class="cat-paw-icon">🐾</span>
-                <p>"Some people make your world a little brighter just by being in it. You're that person for me. 💕"</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         WELCOME / COVER SCREEN
+         WELCOME / COVER SCREEN (Loads First)
          ========================================== -->
     <div id="welcomeOverlay" class="welcome-overlay">
         <div class="welcome-card">
@@ -65,9 +42,9 @@
     </div>
 
     <!-- ==========================================
-         3. SECRET PASSWORD OVERLAY (Hidden by default)
+         3. SECRET PASSWORD OVERLAY (Triggered after Welcome)
          ========================================== -->
-    <div id="passwordOverlay" class="password-screen">
+    <div id="passwordOverlay" class="password-screen" style="display: none;">
         <div class="window-frame">
             <!-- Animated Peeking Black Cat -->
             <div class="cat-peeking">
@@ -96,9 +73,32 @@
     </div>
 
     <!-- ==========================================
+         2. HERO HOME INTERFACE 
+         ========================================== -->
+    <section id="heroHome" class="tulip-hero">
+        <!-- Realistic Glowing Moon -->
+        <div class="realistic-moon"></div>
+        
+        <div class="hero-content">
+            <span class="sub-tag">🌷 Our Little Garden 🐾</span>
+            <h1 class="hero-title">For My Bestie 💖</h1>
+            <p class="hero-subtitle">A cozy little space full of memories, laughter, and endless friendship.</p>
+            
+            <button class="open-btn" onclick="triggerBloomBurst(event)">Press to bloom 🌸</button>
+        </div>
+
+        <div class="tulip-field-footer">
+            <div class="quote-pill">
+                <span class="cat-paw-icon">🐾</span>
+                <p>"Some people make your world a little brighter just by being in it. You're that person for me. 💕"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
          4. THE 4 GARDEN CARDS SECTION
          ========================================== -->
-    <section id="gardenSection" class="garden-container">
+    <section id="gardenSection" class="garden-container hidden">
         <h2 class="section-title">Our Little Garden 🌷</h2>
         
         <div class="garden-grid">
@@ -154,7 +154,7 @@
         </div>
     </div>
 
-    <!-- Special Note Envelope Popup (Placed at Root Level for Fullscreen Coverage) -->
+    <!-- Special Note Envelope Popup -->
     <div id="letterBackdrop" class="letter-backdrop hidden" onclick="closeEnvelope()"></div>
     <div id="letterPaper" class="letter-paper hidden">
         <button onclick="closeEnvelope()" style="float: right; background: none; border: none; font-size: 20px; cursor: pointer; color: #666;">✕</button>
