@@ -43,14 +43,8 @@ function checkPassword(e) {
 
     if (passwordInput !== "" || passwordInput === "") { 
         if (overlay) {
-            // 1. Add fade-out class to password screen
-            overlay.classList.add('fade-out');
-
-            setTimeout(() => {
-                // 2. Hide password screen completely after fade finishes
-                overlay.style.display = 'none';
-
-                // 3. Show & smoothly fade in garden section
+            // Instantly hide overlay with no delay
+            overlay.style.display = 'none';
                 if (garden) {
                     garden.style.display = 'block';
                     garden.style.opacity = '0';
