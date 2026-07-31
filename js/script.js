@@ -242,3 +242,23 @@ window.onclick = function(event) {
         closeModal();
     }
 };
+// SPAWN FLOATING HEART / TULIP ON CLICK
+document.addEventListener('click', function(e) {
+    const emojis = ['🌷', '💖', '🌸', '✨', '💕', '🌷'];
+    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+    const emojiElement = document.createElement('span');
+    emojiElement.classList.add('floating-emoji');
+    emojiElement.innerText = randomEmoji;
+
+    // Position emoji where the tap/click happened
+    emojiElement.style.left = e.clientX + 'px';
+    emojiElement.style.top = e.clientY + 'px';
+
+    document.body.appendChild(emojiElement);
+
+    // Remove element after animation finishes
+    setTimeout(() => {
+        emojiElement.remove();
+    }, 1200);
+});
