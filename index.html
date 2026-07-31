@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Little Garden 🌷 For My Bestie</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+   <div class="music-btn-container">
+    <button id="musicToggle" class="music-toggle-btn" title="Toggle Music">
+        <i class="fas fa-music"></i>
+    </button>
+   <audio id="bgMusic" loop preload="auto">
+    <source src="assets/audio/vaarooncomp.mp3" type="audio/mpeg">
+</audio>
+</div>
+        <!-- <audio id="bgMusic" loop><source src="assets/audio/vaarooncomp.mp3" type="audio/mpeg"></audio> -->
+    </div>
+
+    <!-- ==========================================
+         2. HERO HOME INTERFACE (Loads First)
+         ========================================== -->
+    <section id="heroHome" class="tulip-hero">
+        <!-- Realistic Glowing Moon -->
+        <div class="realistic-moon"></div>
+        
+        <div class="hero-content">
+            <span class="sub-tag">🌷 Our Little Garden 🐾</span>
+            <h1 class="hero-title">For My Bestie 💖</h1>
+            <p class="hero-subtitle">A cozy little space full of memories, laughter, and endless friendship.</p>
+            
+            <button class="open-btn" onclick="openPasswordModal()">Open With Love &rarr;</button>
+        </div>
+
+        <div class="tulip-field-footer">
+            <div class="quote-pill">
+                <span class="cat-paw-icon">🐾</span>
+                <p>"Some people make your world a little brighter just by being in it. You're that person for me. 💕"</p>
+            </div>
+        </div>
+    </section>
+      <!-- ========================================== -->
+      <!-- WELCOME / COVER SCREEN -->
+      <!-- ========================================== -->
+     <div id="welcomeOverlay" class="welcome-overlay">
+      <div class="welcome-card">
+        <h2>Welcome to Our Secret Garden 🌸</h2>
+        <p>Turn your sound on for the best experience 🎧</p>
+        <button id="startBtn" onclick="startExperience()">Click to Enter ✨</button>
+    </div>
+</div>
+    <!-- ==========================================
+         3. SECRET PASSWORD OVERLAY (Hidden by default)
+         ========================================== -->
+    <div id="passwordOverlay" class="password-screen">
+        <div class="window-frame">
+            <!-- Animated Peeking Black Cat -->
+            <div class="cat-peeking">
+                <div class="cat-head">
+                    <div class="cat-ear ear-left"></div>
+                    <div class="cat-ear ear-right"></div>
+                    <div class="cat-eye eye-left"><div class="pupil"></div></div>
+                    <div class="cat-eye eye-right"><div class="pupil"></div></div>
+                    <div class="cat-nose"></div>
+                </div>
+                <div class="cat-paws">
+                    <span class="paw"></span>
+                    <span class="paw"></span>
+                </div>
+            </div>
+
+            <div class="password-card">
+                <h3>This little garden <br><span>is only for you 🌷</span></h3>
+                <div class="input-group">
+                    <input type="password" id="secretPass" placeholder="Enter password 🌷">
+                    <button type="button" onclick="checkPassword(event)">Unlock 🌸</button>
+                </div>
+                <p class="pass-hint">psst... only besties know the password! 🐾</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         4. THE 4 GARDEN CARDS SECTION
+         ========================================== -->
+    <section id="gardenSection" class="garden-container">
+        <h2 class="section-title">Our Little Garden 🌷</h2>
+        
+        <div class="garden-grid">
+            <!-- Card 1: Memories -->
+            <div class="garden-card" onclick="openModal('memories')">
+                <div class="card-icon"><i class="fas fa-images"></i></div>
+                <h3>Memories 📸</h3>
+                <p>Hanging polaroids & photos</p>
+                <span class="card-cat-badge">🐾</span>
+            </div>
+
+            <!-- Card 2: Late Night Talks -->
+            <div class="garden-card" onclick="openModal('talks')">
+                <div class="card-icon"><i class="fas fa-moon"></i></div>
+                <h3>Late Night Talks 🌙</h3>
+                <p>Random 2 AM deep life talks</p>
+                <span class="card-cat-badge">🐾</span>
+            </div>
+
+            <!-- Card 3: Why You're Special -->
+            <div class="garden-card" onclick="openModal('special')">
+                <div class="card-icon"><i class="fas fa-sparkles"></i></div>
+                <h3>Why You're Special ✨</h3>
+                <p>My favorite notification</p>
+                <span class="card-cat-badge">🐾</span>
+            </div>
+
+            <!-- Card 4: Future Adventures -->
+            <div class="garden-card" onclick="openModal('future')">
+                <div class="card-icon"><i class="fas fa-plane-departure"></i></div>
+                <h3>Future Adventures ✈️</h3>
+                <p>First IRL meet & cafe dates</p>
+                <span class="card-cat-badge">🐾</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         5. INTERACTIVE POPUP / DETAIL MODAL
+         ========================================== -->
+    <div id="detailModal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-back-btn" onclick="closeModal()">&larr; back</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Main JavaScript File -->
+    <script src="js/script.js"></script>
+</body>
+</html>
