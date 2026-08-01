@@ -196,8 +196,8 @@ const cardData = {
     future: {
         title: "Future Meetup ✈️",
         content: `
-            <p style="margin-bottom: 12px;">"The first IRL hug we gonnaa havee bhaii... ⏳"</p>
-            <p>"First meet pe cafe date and city exploree ✨"</p>
+            <p style="margin-bottom: 12px;">"The first IRL hug we gonnaa haveee... ⏳"</p>
+            <p>"City explore and cafe date in first meet ✨"</p>
         `
     }
 };
@@ -237,7 +237,7 @@ window.onclick = function(event) {
 // ==========================================
 // TYPEWRITER EFFECT FOR FINAL SPECIAL MESSAGE
 // ==========================================
-const customMessage = `Helloo! Sbse pehele happyyy friendshippp dayyyy !!! 🎉\n\nAnd this could've been done normallyy alsoo but meko laga thoda kuch alag se krta hu for my girll, isiliye made this. Ik utna koi perfect sa webpage nhi bana hai, but I tried to make one for you. 🌸\n\nI'm soo haappyyy to have a bestiiieee likee youu, my bestessttt friieenddd! I reallyy wannaa thank youu for being with me jub bhi needed, for understanding me itnee acheee se. Mai jub bhi achaa feel nhi krta mera mood liftup krti hai, busyy schedule me se bhii youu managee to come to me, reply kr detii hai, mekoo supporrtt krtii har chizz me and smjhaatii bhii haii... 🥹💗`;
+const customMessage = `Helloo Ishuuuu !!! Happyyy friendshippp dayyyy !!! 🎉\n\nAnd this could've been done normallyy alsoo but meko laga thoda kuch alag se krta hu for my girll, isiliye made this. Ik utna koi perfect sa webpage nhi bana hai, but I tried to make one for you. 🌸\n\nI'm soo haappyyy to have a bestiiieee likee youu, my bestessttt friieenddd! I reallyy wannaa thank youu for being with me jub bhi needed, for understanding me itnee acheee se. Mai jub bhi achaa feel nhi krta mera mood liftup krti hai, busyy schedule me se bhii youu managee to come to me, reply kr detii hai, mekoo supporrtt krtii har chizz me and smjhaatii bhii haii... 🥹💗`;
 
 let msgIndex = 0;
 
